@@ -5,7 +5,10 @@ const Button_type_clasess = {
 };
 const Button = ({ children, buttonType, ...otherprops }) => {
   return (
-    <button className={`button-container ${Button_type_clasess[buttonType]}`}>
+    <button
+      {...otherprops}
+      className={`button-container ${Button_type_clasess[buttonType]}`}
+    >
       {children}
     </button>
   );

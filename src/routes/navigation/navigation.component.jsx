@@ -6,12 +6,11 @@ import { UserContext } from "../../contexts/user.contexts";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import { SignOutUser } from "../../utils/firebase/firebase.utils.js";
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   console.log(currentUser);
 
   const signOutHandler = async () => {
     await SignOutUser();
-    setCurrentUser(null);
   };
   return (
     <Fragment>

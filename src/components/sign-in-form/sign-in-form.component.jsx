@@ -1,5 +1,5 @@
 import "./sign-in-form.styles.scss";
-import Button from "../button/button.components";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.components";
 import {
   SignInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -76,8 +76,12 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           <Button type="submit"> SIGN IN</Button>
-          <Button type="button" buttonType="google" onClick={GoogleSignIn}>
-            Google SignIn
+          <Button
+            type="button"
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            onClick={GoogleSignIn}
+          >
+            Google
           </Button>
         </div>
       </form>

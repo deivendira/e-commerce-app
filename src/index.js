@@ -11,6 +11,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { store, persistor } from "./store/store";
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,7 +23,10 @@ root.render(
           {/*<UseProvider>?*/}
           {/*<CategoriesProvider> */}
           {/* <CartProvider>*/}
-          <App />
+          <Elements stripe={stripePromise}>
+            <App />
+          </Elements>
+
           {/* <CartProvider>*/}
           {/*</CategoriesProvider> */}
           {/*</UseProvider>*/}
